@@ -1,0 +1,107 @@
+/* petticket.css */
+
+.booking-containerr {
+  background: url("https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=1920&q=80") no-repeat center center/cover;
+  backdrop-filter: blur(4px);
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-formm {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in;
+}
+
+.success-messagee {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in;
+  max-width: 500px;
+}
+
+.booking-formm h2,
+.success-messagee h3 {
+  color: #0077cc;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.booking-formm p,
+.success-messagee p {
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.form-groupp {
+  margin-bottom: 20px;
+}
+
+.form-groupp label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-groupp input,
+.form-groupp select,
+.form-groupp textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.form-groupp input:focus,
+.form-groupp select:focus,
+.form-groupp textarea:focus {
+  outline: none;
+  border-color: #0077cc;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.btn-bookingg {
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-bookingg:hover {
+  background-color: #005fa3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

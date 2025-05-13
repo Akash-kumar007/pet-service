@@ -1,0 +1,27 @@
+.bg-image-container {
+    position: relative;
+    background-image: url('https://vet-advantage.com/wp-content/uploads/sites/5/2021/07/veterinary-appointments-online-booking.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(4px);
+
+    
+  }
+  
+  .bg-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Optional dark overlay */
+    backdrop-filter: blur(8px); /* This applies the blur effect */
+    z-index: -1; /* Ensures content stays on top */
+  }
+  
+  .container-fluid {
+    position: relative;
+    z-index: 1; /* Keeps the form content above the blurred background */
+  }
+  

@@ -1,0 +1,110 @@
+/* src/pages/Booking.css */
+
+.booking-container1 {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #f9f9f9, #e0f7fa);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeSlideIn 0.7s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+  margin-top: 8px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:focus {
+  border-color: #00b4d8;
+  background-color: #f0fcff;
+  outline: none;
+}
+
+button[type="submit"] {
+  margin-top: 1rem;
+  padding: 14px;
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #0077b6, #023e8a);
+}
+
+.back-button1 {
+  background: #ef233c;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button1:hover {
+  background-color: #d90429;
+}
+
+@media (max-width: 600px) {
+  .booking-container1 {
+    margin: 2rem 1rem;
+    padding: 2rem;
+  }
+}

@@ -1,0 +1,66 @@
+/* src/pages/petfriendlycafs.css */
+
+.pet-page {
+    padding: 2rem;
+    background-color: #fdfdfd;
+    min-height: 100vh;
+  }
+  
+  .page-title {
+    text-align: center;
+    color: #0d6efd;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .cafe-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .cafe-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .cafe-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cafe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  .cafe-name {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .cafe-location {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .book-button {
+    background-color: #0d6efd;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .book-button:hover {
+    background-color: #0056b3;
+  }
+  
