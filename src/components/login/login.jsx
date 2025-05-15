@@ -36,7 +36,7 @@
           </div>
           <div className="login-options">
             <label>                                                                                                                                  </label>
-            <span>Forgot password?</span>
+            <span><Link to="/forgot-password">Forgot password?</Link></span>
           </div>
           <button type="submit">Login</button>
           <p>Don’t have an account? <Link to="/">Register</Link></p>
