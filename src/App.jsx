@@ -20,17 +20,15 @@ import Petmating from './components/Petmating/Petmating';
 import Aboutus from './pages/Aboutus/Aboutus';
 import ContactUs from './components/Contact/Contact';
 import BookTable from './components/pet driendly cafs/Booking/Booking';
-import ForgotPassword from './components/ForgotPassword/ForgotPassword';
-
 
 function App() {
   const location = useLocation();
-  const noHeaderFooterRoutes = ["/login", "/", "/signup","/forgot-password"];  // "/" bhi yahan include kiya gaya hai
+  const noHeaderFooterRoutes = ["/login", "/", "/signup"];  // "/" bhi yahan include kiya gaya hai
   const hideLayout = noHeaderFooterRoutes.includes(location.pathname);
 
   return (
     <div className='app'>
-    {!hideLayout && <MyNavbar/>  }
+      {!hideLayout && <MyNavbar />}
 
       <Routes>
         <Route path="/home" element={<Home />} />
@@ -49,10 +47,9 @@ function App() {
         <Route path="/booknow" element={<Booknow />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/book/:id" element={<BookTable />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
 
-      {!hideLayout && <Footer/> }
+      {!hideLayout && <Footer />}
     </div>
   );
 }
