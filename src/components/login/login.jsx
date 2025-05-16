@@ -13,10 +13,10 @@
       e.preventDefault();
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        alert('Login successful!');
+        // alert('Login successful!');
         navigate('/home');
       } catch (error) {
-        alert(error.message);
+        alert('Invalid user password');
       }
     };
 

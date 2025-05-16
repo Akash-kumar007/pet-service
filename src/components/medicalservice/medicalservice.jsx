@@ -11,8 +11,11 @@ const services = [
 ];
 
 const doctors = [
-  { id: 1, name: "Dr. Emily Carter", specialty: "Veterinary Surgeon", rating: "⭐⭐⭐⭐⭐" },
-  { id: 2, name: "Dr. John Smith", specialty: "Pet Nutritionist", rating: "⭐⭐⭐⭐" },
+  { id: 1, name: "Dr. Hardeep Singh", specialty: "Veterinary Surgeon", rating: "⭐⭐⭐⭐⭐" },
+  { id: 2, name: "Dr. Vipin Talwar", specialty: "General Physician", rating: "⭐⭐⭐⭐" },
+  { id: 3, name: "Dr. Bhatti", specialty: "Pet Nutritionist", rating: "⭐⭐⭐⭐" },
+  { id: 4, name: "Dr. Anil Kumar Taneja", specialty: "Pet Nutritionist", rating: "⭐⭐⭐⭐" },
+  { id: 5, name: "Dr. Sandeep Goel", specialty: "Pet Nutritionist", rating: "⭐⭐⭐⭐" },
 ];
 
 const MedicalServices = () => {

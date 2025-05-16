@@ -66,35 +66,47 @@ const PetTicket = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let validationErrors = {};
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  let validationErrors = {};
 
-    Object.keys(formData).forEach((key) => {
-      const error = validateField(key, formData[key]);
-      if (error) validationErrors[key] = error;
-    });
+  Object.keys(formData).forEach((key) => {
+    const error = validateField(key, formData[key]);
+    if (error) validationErrors[key] = error;
+  });
 
-    if (Object.keys(validationErrors).length === 0) {
-      setSubmitted(true);
-      console.log("Form Data:", formData);
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        from: "",
-        to: "",
-        date: "",
-        travelMode: "",
-        petDetails: "",
+  if (Object.keys(validationErrors).length === 0) {
+    try {
+      const response = await fetch('http://localhost:5000/api/pet-ticket', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
-    } else {
-      setErrors(validationErrors);
-    }
-  };
 
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          from: "",
+          to: "",
+          date: "",
+          travelMode: "",
+          petDetails: "",
+        });
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      alert("Server error. Please try again later.");
+    }
+  } else {
+    setErrors(validationErrors);
+  }
+};
   return (
     
     <div className="booking-containerr">

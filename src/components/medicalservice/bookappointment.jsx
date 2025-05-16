@@ -13,7 +13,7 @@ const BookAppointment = () => {
   });
 
   const services = ["General Checkups", "Emergency Care", "Surgeries", "Vaccinations", "Nutrition & Diet"];
-  const doctors = ["Dr. Emily Carter", "Dr. John Smith"];
+  const doctors = ["Dr. Hardeep Singh", "Dr. Vipin Talwar","Dr. Bhatti", "Dr. Anil Kumar Taneja","Dr. Sandeep Goel"];
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
