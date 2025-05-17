@@ -1,6 +1,7 @@
 import './App.css';
 import { useLocation } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
+import { useEffect,useState } from 'react';
 import Home from "./pages/Home/Home";
 import Footer from './components/Footer/footer';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,11 +22,22 @@ import Aboutus from './pages/Aboutus/Aboutus';
 import ContactUs from './components/Contact/Contact';
 import BookTable from './components/pet driendly cafs/Booking/Booking';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
+import SplashScreen from './Splashscreen/Splashscreen';
 
 function App() {
   const location = useLocation();
   const noHeaderFooterRoutes = ["/login", "/", "/signup","/forgot-password"];  // "/" bhi yahan include kiya gaya hai
   const hideLayout = noHeaderFooterRoutes.includes(location.pathname);
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 3000); // 3 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSplash) {
+    return <SplashScreen />;
+  }
 
   return (
     <div className='app'>
