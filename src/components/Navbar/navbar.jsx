@@ -120,13 +120,33 @@ const MyNavbar = () => {
             </div>
 
             {/* Profile */}
-            <Link to="/profile" onClick={closeMobileMenu} className="mt-2 lg:mt-0 lg:ml-4">
-              <img
-                src="https://www.w3schools.com/howto/img_avatar.png"
-                alt="Profile"
-                className="h-10 w-10 rounded-full border-2  border-yellow-400 hover:scale-105 transition"
-              />
-            </Link>
+          {/* Profile */}
+<Link to="/profile" onClick={closeMobileMenu} className="mt-2 lg:mt-0 lg:ml-4">
+  <img
+    src="https://www.w3schools.com/howto/img_avatar.png"
+    alt="Profile"
+    className="h-10 w-10 rounded-full border-2 border-yellow-400 hover:scale-105 transition"
+  />
+</Link>
+
+{/* Cart */}
+<Link to="/cart" onClick={closeMobileMenu} className="mt-2 lg:mt-0 lg:ml-4 relative">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-8 w-8 text-yellow-400 hover:scale-105 transition"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 7h11L17 13M9 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z"
+    />
+  </svg>
+</Link>
+
           </div>
         </div>
       </div>
