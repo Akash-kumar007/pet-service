@@ -23,8 +23,6 @@ import ContactUs from './components/Contact/Contact';
 import BookTable from './components/pet driendly cafs/Booking/Booking';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import SplashScreen from './Splashscreen/Splashscreen';
-import AdminPortal from './components/AdminPanel/AdminPanel';
-import FoodItemList from './components/FoodItem/FoodItem';
 
 function App() {
   const location = useLocation();
@@ -63,8 +61,6 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/book/:id" element={<BookTable />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/adminpanel" element={<AdminPortal/>} />
-        <Route path="/cart" element={<FoodItemList/>} />
 
       </Routes>
 
