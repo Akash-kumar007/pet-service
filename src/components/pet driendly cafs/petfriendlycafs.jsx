@@ -33,7 +33,7 @@ const CafeCard = ({ id, name, location, image }) => {
 export default function CafesWithPets() {
   return (
     <div className="pet-page">
-      <h1>🐾 Pet Friendly Cafés 🐾</h1>
+      <h1 className='cafs-text'>🐾 Pet Friendly Cafés 🐾</h1>
       <div className="cafe-cards">
         {cafes.map(cafe => (
           <CafeCard key={cafe.id} {...cafe} />

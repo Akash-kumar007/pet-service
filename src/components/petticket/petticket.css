@@ -94,6 +94,9 @@
 .btn-bookingg:hover {
   background-color: #005fa3;
 }
+.journey-text{
+  text-align: center;
+}
 
 @keyframes fadeIn {
   from {

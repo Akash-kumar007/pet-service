@@ -118,7 +118,7 @@ const PetTicket = () => {
         </div>
       ) : (
         <form className="booking-formm" onSubmit={handleSubmit}>
-          <h2>Book Your Pet-Friendly Journey</h2>
+          <h2 className="journey-text">Book Your Pet-Friendly Journey</h2>
           <p> <strong>Disclaimer:</strong> Only dogs and cats are allowed in our services. We do not accommodate other animals. Please ensure your pet meets these requirements before making any bookings or inquiries.</p>
           <div className="form-groupp">
             <label>Name</label>

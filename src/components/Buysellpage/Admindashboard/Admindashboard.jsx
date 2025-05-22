@@ -29,33 +29,36 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        <div className="bookings-section">
-          <h3>Recent Bookings</h3>
-          {bookings.length > 0 ? (
-            <table className="booking-table">
-              <thead>
-                <tr>
-                  <th>Payment ID</th>
-                  <th>Item</th>
-                  <th>Amount</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {bookings.map((booking, index) => (
-                  <tr key={index}>
-                    <td>{booking.paymentId}</td>
-                    <td>{booking.itemName}</td>
-                    <td>₹{booking.amount}</td>
-                    <td>{booking.date}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <p>No bookings found.</p>
-          )}
-        </div>
+       <div className="bookings-section">
+  <h3 className="section-title">Recent Bookings</h3>
+  {bookings.length > 0 ? (
+    <div className="table-wrapper">
+      <table className="booking-table">
+        <thead>
+          <tr>
+            <th>Payment ID</th>
+            <th>Item</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {bookings.map((booking, index) => (
+            <tr key={index}>
+              <td>{booking.paymentId}</td>
+              <td>{booking.itemName}</td>
+              <td>₹{booking.amount}</td>
+              <td>{booking.date}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  ) : (
+    <p className="no-bookings">No bookings found.</p>
+  )}
+</div>
+
       </div>
     </div>
   );
