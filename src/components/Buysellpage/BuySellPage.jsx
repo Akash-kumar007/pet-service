@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./BuySellPage.css";
 
 const Buysellpage = () => {
+  const navigate = useNavigate();
+
   const [mode, setMode] = useState("buy");
   const [items, setItems] = useState([
     {
@@ -10,7 +13,8 @@ const Buysellpage = () => {
       description: "Breed: Labrador",
       price: 3000,
       category: "dog",
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://images.unsplash.com/photo-1604659554766-e22cd9c7c61f?q=80&w=2000&auto=format&fit=crop",
     },
     {
       id: 2,
@@ -18,7 +22,8 @@ const Buysellpage = () => {
       description: "Breed: Labrador",
       price: 3000,
       category: "dog",
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://images.unsplash.com/photo-1566903036573-b68d7366dd32?q=80&w=1974&auto=format&fit=crop",
     },
     {
       id: 3,
@@ -26,7 +31,8 @@ const Buysellpage = () => {
       description: "Breed: Labrador",
       price: 3000,
       category: "dog",
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?q=80&w=2080&auto=format&fit=crop",
     },
   ]);
 
@@ -56,7 +62,7 @@ const Buysellpage = () => {
     const { name, description, price, category, image } = formData;
 
     if (!name || !description || !price || !category) {
-      console.log("Please fill all required fields");
+      alert("Please fill all required fields");
       return;
     }
 
@@ -64,22 +70,66 @@ const Buysellpage = () => {
       id: Date.now(),
       name,
       description,
-      price,
+      price: Number(price),
       category,
-      image: image ? URL.createObjectURL(image) : "https://via.placeholder.com/150",
+      image: image
+        ? URL.createObjectURL(image)
+        : "https://via.placeholder.com/150",
     };
 
     setItems([newItem, ...items]);
-    setFormData({ name: "", description: "", price: "", category: "", image: null });
+    setFormData({
+      name: "",
+      description: "",
+      price: "",
+      category: "",
+      image: null,
+    });
     setPreview(null);
     setMode("buy");
   };
 
-  const handleDelete = (id) => {
-    const confirmed = window.confirm("Are you sure you want to delete this item?");
-    if (confirmed) {
-      setItems(items.filter(item => item.id !== id));
+  const handleBuy = (item) => {
+    if (!window.Razorpay) {
+      alert("Razorpay SDK not loaded. Please check your internet or add the Razorpay script to index.html.");
+      return;
     }
+
+    const options = {
+      key: "rzp_test_4mLIR5foMq9QC0", // Your Razorpay test key
+      amount: item.price * 100, // in paise
+      currency: "INR",
+      name: "Pet Marketplace",
+      description: item.name,
+      handler: function (response) {
+        const purchase = {
+          paymentId: response.razorpay_payment_id,
+          itemName: item.name,
+          amount: item.price,
+          date: new Date().toLocaleString(),
+        };
+
+        const existingPurchases =
+          JSON.parse(localStorage.getItem("purchases")) || [];
+        localStorage.setItem(
+          "purchases",
+          JSON.stringify([purchase, ...existingPurchases])
+        );
+
+        navigate("/admin", { state: purchase });
+      },
+      prefill: {
+        name: "Customer Name",
+        email: "customer@example.com",
+        contact: "9999999999",
+      },
+      theme: {
+        color: "#28a745",
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   };
 
   return (
@@ -99,6 +149,7 @@ const Buysellpage = () => {
         >
           Sell
         </button>
+        <button onClick={() => navigate("/admin")}>Admin Panel</button>
       </div>
 
       {mode === "buy" ? (
@@ -111,11 +162,8 @@ const Buysellpage = () => {
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
                 <p className="price">₹{item.price}</p>
-                <button
-                  className="delete-btn"
-                  onClick={() => handleDelete(item.id)}
-                >
-                  Delete
+                <button className="buy-btn" onClick={() => handleBuy(item)}>
+                  Buy
                 </button>
               </div>
             ))}
@@ -148,7 +196,6 @@ const Buysellpage = () => {
               onChange={handleChange}
               required
             />
-
             <select
               name="category"
               value={formData.category}
@@ -161,14 +208,12 @@ const Buysellpage = () => {
               <option value="bird">Bird</option>
               <option value="other">Other</option>
             </select>
-
             <input
               type="file"
               name="image"
               accept="image/*"
               onChange={handleChange}
             />
-
             {preview && (
               <div style={{ marginBottom: "12px" }}>
                 <img
@@ -178,7 +223,6 @@ const Buysellpage = () => {
                 />
               </div>
             )}
-
             <button type="submit">Submit</button>
           </form>
         </div>

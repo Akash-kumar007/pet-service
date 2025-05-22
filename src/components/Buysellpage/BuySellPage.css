@@ -100,4 +100,17 @@
     font-size: 16px;
   }
   
-  
+  .buy-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #218838;
+}

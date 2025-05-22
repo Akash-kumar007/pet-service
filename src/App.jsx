@@ -23,6 +23,7 @@ import ContactUs from './components/Contact/Contact';
 import BookTable from './components/pet driendly cafs/Booking/Booking';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import SplashScreen from './Splashscreen/Splashscreen';
+import AdminDashboard from './components/Buysellpage/Admindashboard/Admindashboard';
 
 function App() {
   const location = useLocation();
@@ -54,6 +55,7 @@ function App() {
         <Route path="/medicalservice" element={<MedicalServices />} />
         <Route path="/book-appointment" element={<BookAppointment />} />
         <Route path="/buysellpage" element={<Buysellpage />} />
+        <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/petmating" element={<Petmating />} />
         <Route path="/petgrooming" element={<Petgrooming />} />
         <Route path="/aboutus" element={<Aboutus />} />
