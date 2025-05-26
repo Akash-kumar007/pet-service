@@ -1,0 +1,84 @@
+/* Container */
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.profile-heading {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 26px;
+}
+
+/* Form */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Fields */
+.profile-input,
+.profile-select,
+.profile-textarea,
+.profile-file-input {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.profile-input:focus,
+.profile-select:focus,
+.profile-textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Textarea */
+.profile-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* File Input */
+.profile-file-input {
+  padding: 5px 0;
+  background-color: transparent;
+  border: none;
+}
+
+/* Submit Button */
+.profile-submit-button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Image Preview */
+.profile-image-preview {
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
+  border: 2px solid #007bff;
+}

@@ -24,6 +24,8 @@ import BookTable from './components/pet driendly cafs/Booking/Booking';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import SplashScreen from './Splashscreen/Splashscreen';
 import AdminDashboard from './components/Buysellpage/Admindashboard/Admindashboard';
+import ProfileForm from './components/Profile/Profile';
+import ProfileView from './components/Profile/Profileview/Profileview';
 
 function App() {
   const location = useLocation();
@@ -63,6 +65,8 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/book/:id" element={<BookTable />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/profileform" element={<ProfileForm />} />
+        <Route path="/profile/:email" element={<ProfileView />} />
 
       </Routes>
 

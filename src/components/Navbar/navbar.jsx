@@ -121,7 +121,7 @@ const MyNavbar = () => {
 
             {/* Profile */}
           {/* Profile */}
-<Link to="/profile" onClick={closeMobileMenu} className="mt-2 lg:mt-0 lg:ml-4">
+<Link to="/profileform" onClick={closeMobileMenu} className="mt-2 lg:mt-0 lg:ml-4">
   <img
     src="https://www.w3schools.com/howto/img_avatar.png"
     alt="Profile"
