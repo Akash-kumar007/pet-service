@@ -54,12 +54,7 @@ const ProfileView = () => {
     <div className="profile-view-container">
       <div className="profile-header">
         <h2>Profile Details</h2>
-        <button 
-          onClick={() => setIsEditing(!isEditing)}
-          className="edit-button"
-        >
-          {isEditing ? 'Cancel' : 'Edit Profile'}
-        </button>
+        
       </div>
       
       {user.profileImage && (
@@ -140,7 +135,18 @@ const ProfileView = () => {
           </button>
         </div>
       )}
-      <LogoutButton />
+      
+   <div className="bottom-buttons">
+  <button 
+    onClick={() => setIsEditing(!isEditing)}
+    className="edit-button"
+  >
+    {isEditing ? 'Cancel' : 'Edit Profile'}
+  </button>
+  <div className="logout-button">
+    <LogoutButton />
+  </div>
+</div>
     </div>
   );
 };
