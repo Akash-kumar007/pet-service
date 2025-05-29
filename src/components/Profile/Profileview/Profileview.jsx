@@ -57,10 +57,14 @@ const ProfileView = () => {
         
       </div>
       
-      {user.profileImage && (
-        <img src={`http://localhost:5001/${user.profileImage}`} alt="Profile" width="150" />
-      )}
-
+  {user.profileImage && (
+  <img
+src={`http://localhost:5001${user.profileImage}`}
+    alt="Profile"
+    width="150"
+    onError={(e) => e.currentTarget.src = '/default-profile.png'}
+  />
+)}
       {!isEditing ? (
         <div className="profile-info">
           <p><strong>Name:</strong> {user.username}</p>
