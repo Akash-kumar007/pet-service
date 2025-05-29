@@ -77,7 +77,7 @@ const PetTicket = () => {
 
   if (Object.keys(validationErrors).length === 0) {
     try {
-      const response = await fetch('http://localhost:5000/api/pet-ticket', {
+      const response = await fetch('http://localhost:5001/api/pet-ticket', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -152,8 +152,15 @@ const PetTicket = () => {
 
           <div className="form-groupp">
             <label>Date</label>
-            <input type="date" placeholder="Date" name="date" value={formData.date} onChange={handleChange} />
-            {errors.date && <span className="error">{errors.date}</span>}
+<input
+  type="date"
+  className="form-control"
+  name="date"
+  value={formData.date}
+  onChange={handleChange}
+  required
+  min={new Date().toISOString().split("T")[0]}
+/>              {errors.date && <span className="error">{errors.date}</span>}
           </div>
 
           <div className="form-groupp">

@@ -22,7 +22,7 @@ const BookAppointment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/appointment', {
+      const response = await fetch('http://localhost:5001/api/appointment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -78,8 +78,15 @@ const BookAppointment = () => {
                   <div className="row">
                     <div className="col-md-6 mb-3">
                       <label className="form-label fw-semibold">📅 Date</label>
-                      <input type="date" className="form-control" name="date" value={formData.date} onChange={handleChange} required />
-                    </div>
+<input
+  type="date"
+  className="form-control"
+  name="date"
+  value={formData.date}
+  onChange={handleChange}
+  required
+  min={new Date().toISOString().split("T")[0]}
+/>                    </div>
 
                     <div className="col-md-6 mb-3">
                       <label className="form-label fw-semibold">⏰ Time</label>

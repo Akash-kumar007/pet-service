@@ -27,7 +27,7 @@ export default function BookTable() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/book', {
+      const response = await fetch('http://localhost:5001/api/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, cafe: cafe.name, location: cafe.location }),
@@ -52,8 +52,15 @@ export default function BookTable() {
               <input type="text" name="name" value={formData.name} onChange={handleChange} required />
             </label>
             <label>Date:
-              <input type="date" name="date" value={formData.date} onChange={handleChange} required />
-            </label>
+<input
+  type="date"
+  className="form-control"
+  name="date"
+  value={formData.date}
+  onChange={handleChange}
+  required
+  min={new Date().toISOString().split("T")[0]}
+/>              </label>
             <label>Time:
               <input type="time" name="time" value={formData.time} onChange={handleChange} required />
             </label>

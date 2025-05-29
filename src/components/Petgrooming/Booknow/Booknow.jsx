@@ -20,7 +20,7 @@ const Booknow = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/book-groom-appointment", {
+      const response = await fetch("http://localhost:5001/api/book-groom-appointment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,13 +86,15 @@ const Booknow = () => {
           <option value="Nail Trimming">Nail Trimming</option>
           <option value="Ear Cleaning">Ear Cleaning</option>
         </select>
-        <input
-          type="date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          required
-        />
+       <input
+  type="date"
+  className="form-control"
+  name="date"
+  value={formData.date}
+  onChange={handleChange}
+  required
+  min={new Date().toISOString().split("T")[0]}
+/>  
         <input
           type="time"
           name="time"

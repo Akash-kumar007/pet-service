@@ -22,7 +22,7 @@ const PetMatingForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:5000/api/mating-requests', formData);
+            const res = await axios.post('http://localhost:5001/api/mating-requests', formData);
             alert(res.data.message);
             setFormData({
                 ownerName: '',
