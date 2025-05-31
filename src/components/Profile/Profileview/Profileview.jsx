@@ -11,19 +11,21 @@ const ProfileView = () => {
   const [editedUser, setEditedUser] = useState({});
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const res = await axios.get(`http://localhost:5001/api/user/${email}`);
-        setUser(res.data);
-        setEditedUser(res.data); 
-      } catch (err) {
-        console.error('Error fetching profile:', err);
-        alert('Failed to load profile.');
-      }
-    };
+  const fetchProfile = async () => {
+    try {
+      const res = await axios.get(`http://localhost:5001/api/user/${encodeURIComponent(email)}`);
 
-    fetchProfile();
-  }, [email]);
+      
+      setUser(res.data);
+      setEditedUser(res.data);
+    } catch (err) {
+      console.error('Error fetching profile:', err);
+      alert('Failed to load profile.');
+    }
+  };
+
+  fetchProfile();
+}, [email]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -59,7 +61,7 @@ const ProfileView = () => {
       
   {user.profileImage && (
   <img
-src={`http://localhost:5001${user.profileImage}`}
+src={`http://localhost:5001${user.profileImage || '/default-profile.png'}`}
     alt="Profile"
     width="150"
     onError={(e) => e.currentTarget.src = '/default-profile.png'}
@@ -85,7 +87,15 @@ src={`http://localhost:5001${user.profileImage}`}
               value={editedUser.username || ''}
               onChange={handleInputChange}
             />
-          </div>
+          </div><div className="form-group">
+  <label>Email:</label>
+  <input
+    type="email"
+    name="email"
+    value={editedUser.email || ''}
+    disabled
+  />
+</div>
           <div className="form-group">
             <label>Contact:</label>
             <input
@@ -156,3 +166,4 @@ src={`http://localhost:5001${user.profileImage}`}
 };
 
 export default ProfileView;
+

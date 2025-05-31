@@ -70,17 +70,19 @@ const PetTicket = () => {
   e.preventDefault();
   let validationErrors = {};
 
+  // Validate each field
   Object.keys(formData).forEach((key) => {
     const error = validateField(key, formData[key]);
     if (error) validationErrors[key] = error;
   });
 
+  // If no errors, submit data
   if (Object.keys(validationErrors).length === 0) {
     try {
       const response = await fetch('http://localhost:5001/api/pet-ticket', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
@@ -107,6 +109,7 @@ const PetTicket = () => {
     setErrors(validationErrors);
   }
 };
+
   return (
     
     <div className="booking-containerr">

@@ -24,21 +24,14 @@ export default function BookTable() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:5001/api/book', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, cafe: cafe.name, location: cafe.location }),
-      });
 
-      const data = await response.json();
-      setStatus(data.message);
-      setFormData({ name: '', date: '', time: '' });
-    } catch (error) {
-      setStatus('Booking failed. Please try again later.');
-    }
+    // Simulate successful booking
+    setStatus(`Table booked successfully for ${formData.name} at ${cafe.name} on ${formData.date} at ${formData.time}`);
+    
+    // Clear the form
+    setFormData({ name: '', date: '', time: '' });
   };
 
   return (
@@ -52,15 +45,16 @@ export default function BookTable() {
               <input type="text" name="name" value={formData.name} onChange={handleChange} required />
             </label>
             <label>Date:
-<input
-  type="date"
-  className="form-control"
-  name="date"
-  value={formData.date}
-  onChange={handleChange}
-  required
-  min={new Date().toISOString().split("T")[0]}
-/>              </label>
+              <input
+                type="date"
+                className="form-control"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                required
+                min={new Date().toISOString().split("T")[0]}
+              />
+            </label>
             <label>Time:
               <input type="time" name="time" value={formData.time} onChange={handleChange} required />
             </label>

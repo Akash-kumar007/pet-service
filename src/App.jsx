@@ -29,7 +29,7 @@ import ProfileView from './components/Profile/Profileview/Profileview';
 import PetServicesPage from './components/PetServicesPage';
 import ProductDetail from './components/ProductDetail';
 import FoodNutritionPage from './components/Foodnutritionpage';
-import PetEventsPage from './components/Petevents/PetEvents';
+import PetEventsPage from './components/Petevents/Petevents';
 
 function App() {
   const location = useLocation();
