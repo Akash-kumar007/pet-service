@@ -68,6 +68,14 @@ const MyNavbar = () => {
             <Link to="/aboutus" onClick={closeMobileMenu} className="text-white text-lg font-semibold border-b-2 border-transparent hover:border-yellow-400 transition-all duration-200 no-underline"
             >
               About
+            </Link> 
+            <Link to="/petevents" onClick={closeMobileMenu} className="text-white text-lg font-semibold border-b-2 border-transparent hover:border-yellow-400 transition-all duration-200 no-underline"
+            >
+              Pet Events
+            </Link> 
+             <Link to="/petfriendlycafs" onClick={closeMobileMenu} className="text-white text-lg font-semibold border-b-2 border-transparent hover:border-yellow-400 transition-all duration-200 no-underline"
+            >
+              Pet-friendly Cafés 
             </Link>
 
             {/* Services Dropdown */}
@@ -82,7 +90,6 @@ const MyNavbar = () => {
               {isServicesOpen && (
                 <div className="absolute left-0 mt-2 bg-gray-800 rounded-md shadow-lg z-50 w-52">
                   {[
-                    { label: "Pet-friendly Cafés", path: "/petfriendlycafs" },
                     { label: "Pet Ticketing", path: "/petticket" },
                     { label: "Medical Service", path: "/book-appointment" },
                     { label: "Pet Grooming", path: "/petgrooming" },
@@ -107,7 +114,7 @@ const MyNavbar = () => {
               Contact
             </Link>
 
-            {/* Search */}
+            {/* Search
             <div className="flex mt-2 lg:mt-0">
               <input
                 type="text"
@@ -117,7 +124,7 @@ const MyNavbar = () => {
               <button className="bg-yellow-400 text-black px-4 py-2 rounded-r-full hover:bg-yellow-500">
                 Search
               </button>
-            </div>
+            </div> */}
 
             {/* Profile */}
           {/* Profile */}
@@ -136,7 +143,7 @@ const MyNavbar = () => {
   </svg>
 </Link>
 
-{/* Cart */}
+{/* Cart
 <Link to="/cart" onClick={closeMobileMenu} className="mt-2 lg:mt-0 lg:ml-4 relative">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +159,7 @@ const MyNavbar = () => {
       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 7h11L17 13M9 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z"
     />
   </svg>
-</Link>
+</Link> */}
 
           </div>
         </div>

@@ -26,6 +26,10 @@ import SplashScreen from './Splashscreen/Splashscreen';
 import AdminDashboard from './components/Buysellpage/Admindashboard/Admindashboard';
 import ProfileForm from './components/Profile/Profile';
 import ProfileView from './components/Profile/Profileview/Profileview';
+import PetServicesPage from './components/PetServicesPage';
+import ProductDetail from './components/ProductDetail';
+import FoodNutritionPage from './components/Foodnutritionpage';
+import PetEventsPage from './components/Petevents/PetEvents';
 
 function App() {
   const location = useLocation();
@@ -67,6 +71,12 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/profileform" element={<ProfileForm />} />
         <Route path="/profile/:email" element={<ProfileView />} />
+        <Route path="/profile/:email" element={<PetServicesPage />} />
+        <Route path="/petservices" element={<PetServicesPage />} />
+        <Route path="/product/:productName" element={<ProductDetail />} />
+        <Route path="/services/:petName" element={<PetServicesPage />} />
+        <Route path="/food-nutrition" element={<FoodNutritionPage />} />
+        <Route path="/petevents" element={<PetEventsPage />} />
 
       </Routes>
 

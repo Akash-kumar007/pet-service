@@ -2,17 +2,17 @@
 import "./Home.css"
 import Slider from "../../Slider/slider"
 import Petcategory from "../../components/Petcategory/Petcategory"
-import Petsfood from "../../components/Petsfood/Petsfood"
 import Howitworks from "../../components/Howitworks/Howitworks"
-import PetAdoptionSection from "../../components/PetAdoptionSection/PetAdoptionSection"
+import PetGroomingCategories from "../../components/PetGroomingCategories/PetGroomingCategories"
+import PetServiceHighlights from "../../components/PetServiceHighlights/PetServiceHighlights"
 const Home = () => {
   return (
     <div>
       <Slider/>
   <Petcategory/>
- <Petsfood/>
  <Howitworks/>
- <PetAdoptionSection/>
+ <PetGroomingCategories/>
+ <PetServiceHighlights/>
          </div>
   )
 }
